@@ -3,6 +3,24 @@ let dragOffsetX = 0;
 let dragOffsetY = 0;
 let i=0;
 const container = document.getElementById('grid-container');
+const images = document.querySelectorAll('.drag');
+
+let initialPositions = [];
+
+// Store initial positions of images
+images.forEach((image) => {
+    const position = {
+      left: image.offsetLeft,
+      top: image.offsetTop
+    };
+    initialPositions.push(position);
+  });
+  function resetImages() {
+    images.forEach((img, index) => {
+      img.style.left = initialPositions[index].left;
+      img.style.top = initialPositions[index].top;
+    });
+  }
 
 container.addEventListener('mousedown', dragStart);
 container.addEventListener('mousemove', drag);
@@ -11,9 +29,11 @@ container.addEventListener('mouseup', dragEnd);
 
 document.querySelector('#ss1').addEventListener('click', function() {
   Image(1);
+  resetImages();
 });
 document.querySelector('#ds1').addEventListener('click', function() {
   Image(0);
+  resetImages();
 });
 
 
@@ -31,6 +51,7 @@ function dragStart(event) {
 function drag(event) {
   if (dragItem !== null) {
     event.preventDefault();
+    
     dragItem.style.left = (event.clientX - dragOffsetX) + 'px';
     dragItem.style.top = (event.clientY - dragOffsetY) + 'px';
   }
