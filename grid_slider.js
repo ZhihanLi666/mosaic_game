@@ -85,7 +85,7 @@ function Image(n) {
         if (`jigsaw/${n*9+j}.png` !== null) {
             document.querySelector(`#image${j}`).src = `jigsaw/${n*9+j}.png`;
         } else {
-            document.querySelector(`#image${j}`).src = `00.png`;
+            document.querySelector(`#image${j}`).src = `jigsaw/00.png`;
         }
     }
 }
