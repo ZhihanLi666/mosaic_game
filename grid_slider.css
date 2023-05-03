@@ -24,6 +24,12 @@
   height: 30px;
   /* other button styles */
 }
+
+.table{
+  position:relative;
+  left:1000px;
+}
+
 #image1{
   top:0px;
   left:0px;
