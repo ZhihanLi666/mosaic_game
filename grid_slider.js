@@ -38,10 +38,7 @@ document.querySelector('#ds1').addEventListener('click', function() {
     Image(0);
     resetImages();
 });
-document.querySelector('#10s').addEventListener('click', function() {
-    Image(2);
-    resetImages();
-});
+
 
 function dragStart(event) {
     if (event.target.classList.contains('drag')) {
